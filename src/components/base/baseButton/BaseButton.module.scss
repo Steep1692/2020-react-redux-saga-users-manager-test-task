@@ -1,0 +1,18 @@
+@import "../../../scss/variables";
+
+.button {
+  $background-color: $color-primary;
+
+  padding: 10px 8px;
+  border: none;
+  border-radius: 3px;
+
+  font-size: $font-size-default;
+
+  background-color: $background-color;
+  color: $color-light;
+
+  &:hover {
+    background-color: darken($background-color, 5%);
+  }
+}

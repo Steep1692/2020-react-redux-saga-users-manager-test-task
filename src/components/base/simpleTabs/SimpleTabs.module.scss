@@ -1,0 +1,43 @@
+@import '../../../scss/variables';
+
+.head {
+  display: grid;
+  grid-auto-flow: column;
+  height: 50px;
+}
+
+.button {
+  $background-color: $color-grey-easy;
+  $border: 1px solid $color-dark;
+  padding: 14px 8px;
+  border: none;
+
+  font-size: $font-size-default;
+
+  background-color: $background-color;
+  outline: none;
+
+  transition: .1s;
+
+  &:first-of-type {
+    border-top-left-radius: $border-radius-large;
+  }
+
+  &:last-of-type {
+    border-top-right-radius: $border-radius-large;
+  }
+
+  &:hover {
+    background-color: darken($background-color, 5%);
+  }
+
+  &:active {
+    background-color: $color-primary;
+    color: $color-light;
+  }
+
+  &.active {
+    background-color: $color-grey-dark;
+    color: $color-light;
+  }
+}

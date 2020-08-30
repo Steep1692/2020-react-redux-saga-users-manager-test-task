@@ -1,0 +1,15 @@
+@import "../../../scss/variables";
+
+.filter {
+  padding-left: $gap-default;
+  padding-right: $gap-default;
+  margin-top: $gap-default;
+  margin-bottom: $gap-default;
+}
+
+.list {
+  padding: $gap-default;
+  margin: 0;
+
+  list-style-type: none;
+}
