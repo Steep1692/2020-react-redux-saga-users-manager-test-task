@@ -3,6 +3,7 @@ const SET_CURRENT_PAGE = 'UM/USERS/SET-CURRENT-PAGE'
 const SET_SEED = 'UM/USERS/SET-SEED'
 const ADD_USER_SELECTED = 'UM/USERS/ADD-USER-SELECTED'
 const REMOVE_USER_SELECTED = 'UM/USERS/REMOVE-USER-SELECTED'
+const SET_FILTER_VALUE_SUCCESS = 'UM/USERS/SET_FILTER_VALUE_SUCCESS'
 export const SET_FILTER_VALUE = 'UM/USERS/SET_FILTER_VALUE'
 export const FETCH_USERS = 'UM/USERS/FETCH-USERS'
 
@@ -60,7 +61,7 @@ export const users = (state = initialState, {type, payload}) => {
         ...state,
         seed: payload.seed,
       }
-    case SET_FILTER_VALUE:
+    case SET_FILTER_VALUE_SUCCESS:
       return {
         ...state,
         filterValue: payload.newValue,
@@ -113,6 +114,13 @@ export const removeUserSelected = (id) => ({
 
 export const setFilterValue = (newValue) => ({
   type: SET_FILTER_VALUE,
+  payload: {
+    newValue,
+  },
+})
+
+export const setFilterValueSuccess = (newValue) => ({
+  type: SET_FILTER_VALUE_SUCCESS,
   payload: {
     newValue,
   },
