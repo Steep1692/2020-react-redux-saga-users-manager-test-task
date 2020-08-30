@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getFilterValue, getUsers, getUsersSelectedInfo} from '../../../redux/selectors/users'
 import UsersRow from '../../base/usersRow/UsersRow'
 import {addUserSelected, fetchUsers, removeUserSelected, setFilterValue} from '../../../redux/reducers/users'
-import useThrottle from '../../../hooks/useThrottle'
 import SimpleTabs from '../../base/simpleTabs/SimpleTabs'
 import routes from '../../../constants/routes'
 import {getUserId} from '../../../utils/users'
@@ -20,10 +19,6 @@ const Home = () => {
   const usersSelectedInfo = useSelector(getUsersSelectedInfo)
   const usersFilterValue = useSelector(getFilterValue)
 
-  const setFilterValueDebounce = useThrottle((value) => {
-    dispatch(setFilterValue(value))
-  }, 1000)
-
   useEffect(() => {
     dispatch(fetchUsers(1))
   }, [dispatch])
@@ -37,7 +32,7 @@ const Home = () => {
   }
 
   const onFilterInputChange = ({nativeEvent}) => {
-    setFilterValueDebounce(nativeEvent.target.value)
+    dispatch(setFilterValue(nativeEvent.target.value))
   }
 
   const onUsersItemClick = (id) => {
