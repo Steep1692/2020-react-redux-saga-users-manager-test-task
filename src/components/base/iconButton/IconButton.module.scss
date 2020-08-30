@@ -1,7 +1,9 @@
 @import "../../../scss/variables";
 
 .button {
-  padding: 10px 8px;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 10px;
   border: none;
   border-radius: 3px;
 
@@ -10,4 +12,12 @@
   background-color: transparent;
   color: $color-light;
   outline: none;
+
+  transition: .1s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .4);
+
+    border-radius: 50%;
+  }
 }
