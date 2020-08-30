@@ -1,0 +1,29 @@
+@import "../../../scss/variables";
+
+$header-height: 60px;
+$footer-height: 50px;
+$content-gap-vertical: $gap-medium;
+
+.wrapper {
+  height: 100%;
+}
+
+.header {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+
+  height: $header-height;
+}
+
+.content {
+  position: relative;
+
+  min-height: calc(100% - #{$header-height + $footer-height + $content-gap-vertical + $content-gap-vertical});
+  margin-top: $content-gap-vertical;
+  margin-bottom: $content-gap-vertical;
+}
+
+.footer {
+  height: $footer-height;
+}
