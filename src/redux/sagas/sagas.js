@@ -1,8 +1,14 @@
 import { put, takeEvery, all } from 'redux-saga/effects'
-import {FETCH_USERS, setSeed, setUsers} from '../reducers/users'
+import {
+  FETCH_USERS,
+  SET_FILTER_VALUE,
+  setFilterValueSuccess,
+  setSeed,
+  setUsers
+} from '../reducers/users'
 import users from '../../services/users'
 import {getCurrentPage, getItemsPerPage, getSeed} from '../selectors/users'
-import {select} from '@redux-saga/core/effects'
+import {debounce, select} from '@redux-saga/core/effects'
 import {setIsLoadingSpinnerVisible} from '../reducers/application'
 
 /**
@@ -33,8 +39,15 @@ function* watchUsersRequest() {
   yield takeEvery(FETCH_USERS, fetchUsers)
 }
 
+function* debounceUsersFilter() {
+  yield debounce(250, SET_FILTER_VALUE, function* (action) {
+    yield put(setFilterValueSuccess((action.payload.newValue)))
+  })
+}
+
 export default function* rootSaga() {
   yield all([
     watchUsersRequest(),
+    debounceUsersFilter(),
   ])
 }
