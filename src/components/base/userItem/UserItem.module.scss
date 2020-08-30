@@ -1,0 +1,22 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: $gap-default;
+  align-items: center;
+  padding: 8px;
+
+  cursor: pointer;
+  transition: .1s;
+
+  &:hover {
+    background-color: $color-grey-easy;
+  }
+
+  @include for-tablet-portrait {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}

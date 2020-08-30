@@ -1,0 +1,23 @@
+@import "../../../scss/variables";
+
+.wrapper {
+
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid $color-grey;
+
+  font-size: $font-size-default;
+
+  outline: none;
+  transition: .1s;
+
+  &:focus {
+    border-bottom-color: $color-primary;
+  }
+}

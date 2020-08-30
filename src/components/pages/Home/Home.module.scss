@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+
+.wrapper {
+  position: relative;
+
+  border-bottom-left-radius: $border-radius-large;
+  border-bottom-right-radius: $border-radius-large;
+
+  &:after {
+    $offset-top: 50px;
+
+    z-index: -1;
+    position: absolute;
+    top: $offset-top;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: calc(100% - #{$offset-top});
+
+    box-shadow: 0 0 1px 0 black;
+
+    content: '';
+  }
+}

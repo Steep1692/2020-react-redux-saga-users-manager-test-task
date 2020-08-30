@@ -1,0 +1,1 @@
+export const getIsLoadingSpinnerVisible = ({application}) => application.isLoadingSpinnerVisible

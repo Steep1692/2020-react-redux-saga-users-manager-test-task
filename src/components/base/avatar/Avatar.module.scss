@@ -1,0 +1,22 @@
+.wrapper {
+  $size: 48px;
+
+  overflow: hidden;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+
+  transition: .1s;
+
+  &.large {
+    $size: 128px;
+
+    width: $size;
+    height: $size;
+  }
+}
+
+.image {
+  width: 100%;
+  max-height: 100%;
+}

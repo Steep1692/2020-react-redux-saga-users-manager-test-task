@@ -1,0 +1,26 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: $gap-medium;
+  align-items: center;
+  padding: 8px;
+
+  @include for-tablet-portrait {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    text-align: center;
+  }
+}
+
+.wrapperAvatar {
+  display: grid;
+  justify-content: center;
+}
+
+.infoMain {
+  font-weight: 700;
+}
