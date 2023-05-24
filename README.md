@@ -1,1 +1,1 @@
-Test task 2020 year
+Test task, applying for Middle React FrontEnd Developer, Roll'n'Code – 2020 year
